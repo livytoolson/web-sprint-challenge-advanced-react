@@ -17,12 +17,12 @@ test("form header renders", () => {
 test("form shows success message on submit with form details", () => {
     render(<CheckoutForm />);
 
-    const firstNameInput = screen.getByText(/first name/i);
-    const lastNameInput = screen.getByText(/last name/i);
-    const addressInput = screen.getByText(/address/i);
-    const cityInput = screen.getByText(/city/i);
-    const stateInput = screen.getByText(/state/i);
-    const zipInput = screen.getByText(/zip/i);
+    const firstNameInput = screen.getByLabelText(/first name/i);
+    const lastNameInput = screen.getByLabelText(/last name/i);
+    const addressInput = screen.getByLabelText(/address/i);
+    const cityInput = screen.getByLabelText(/city/i);
+    const stateInput = screen.getByLabelText(/state/i);
+    const zipInput = screen.getByLabelText(/zip/i);
 
     fireEvent.change(firstNameInput, { target: { value: 'John'} });
     fireEvent.change(lastNameInput, { target: { value: 'Doe' } });
@@ -41,7 +41,5 @@ test("form shows success message on submit with form details", () => {
     const checkoutButton = screen.getByRole('button', { name: /checkout/i });
     fireEvent.click(checkoutButton);
 
-    const successMessage = screen.getByText(/you have ordered some new plants! woo-hoo!/i);
-    expect(successMessage).toBeInTheDocument();
+    expect(screen.queryByTestId(/successMessage/i)).toBeVisible()
 });
-
