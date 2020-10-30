@@ -5,6 +5,8 @@ import PlantList from "./components/PlantList";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckoutForm from "./components/CheckoutForm";
 
+import { useDarkMode } from './hooks/useDarkMode';
+
 import "./App.css";
 
 function App() {
@@ -42,6 +44,14 @@ function App() {
                 </span>
               </NavLink>
             </li>
+            {/* <li>
+              <div className="dark-mode__toggle">
+              <div
+              onClick={toggleMode}
+              className={darkMode ? 'toggle toggled' : 'toggle'}
+              />
+              </div>
+            </li> */}
           </ul>
         </nav>
         <Route

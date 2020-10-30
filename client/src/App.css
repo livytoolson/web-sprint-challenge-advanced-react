@@ -251,3 +251,17 @@ pre {
   color: #0e101c;
   border-bottom: 2px solid !important;
 }
+
+.light-mode {
+  color: #313843;
+  background-color: #fff;
+}
+
+.light-mode__toggle {
+  background: papayawhip;
+  border-radius: 50px;
+  border: 1px solid black;
+  height: 20px;
+  position: relative;
+  width: 40px;
+}
