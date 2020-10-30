@@ -5,7 +5,7 @@ import App from "../App"
 
 // Write up the two tests here and make sure they are testing what the title shows
 
-test("compoonent renders correctly", () => {
+test("component renders correctly", () => {
     render(<CheckoutForm />);
 })
 
