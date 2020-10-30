@@ -1,11 +1,18 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
+import App from "../App"
 
 // Write up the two tests here and make sure they are testing what the title shows
 
 test("compoonent renders correctly", () => {
     render(<CheckoutForm />);
+})
+
+test("plants header renders", () => {
+    render(<App />);
+
+    screen.getByText(/react plants/i);
 })
 
 test("form header renders", () => {
