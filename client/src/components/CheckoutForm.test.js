@@ -9,12 +9,6 @@ test("compoonent renders correctly", () => {
     render(<CheckoutForm />);
 })
 
-test("plants header renders", () => {
-    render(<App />);
-
-    screen.getByText(/react plants/i);
-})
-
 test("form header renders", () => {
     render(<CheckoutForm />);
 
@@ -50,3 +44,19 @@ test("form shows success message on submit with form details", () => {
 
     expect(screen.queryByTestId(/successMessage/i)).toBeVisible()
 });
+
+test("plants header renders", () => {
+    render(<App />);
+
+    const plantHeader = screen.getByText(/react plants/i);
+
+    expect(plantHeader).toBeVisible();
+})
+
+test("cart button renders", () => {
+    render(<App />);
+
+    const cartButton = screen.getByText(/cart/i);
+
+    expect(cartButton).toBeVisible();
+})
